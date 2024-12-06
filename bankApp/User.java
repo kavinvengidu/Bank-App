@@ -18,8 +18,8 @@ public class User {
 
     public void registerUser(String id, String pass) {
         credentials.put(id, pass);
-        balanceMap.put(id, 0); // Initial balance is 0
-        transactionHistory.put(id, new ArrayList<>()); // Empty transaction history
+        balanceMap.put(id, 0); 
+        transactionHistory.put(id, new ArrayList<>()); 
     }
 
     public int getBalance(String id) {
@@ -33,7 +33,7 @@ public class User {
     public void addTransaction(String id, String transaction) {
         ArrayList<String> history = transactionHistory.get(id);
         if (history.size() == 5) {
-            history.remove(0); // Maintain only the last 5 transactions
+            history.remove(0);
         }
         history.add(transaction);
     }
